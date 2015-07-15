@@ -231,22 +231,17 @@ void morseLetter(char letter) {
   nextLetter();
 }
 
+void message(String text) {
+  int len = text.length();
+  for(int i=0; i<len; ++i) {
+    morseLetter(text[i]);
+  }
+}
+
 void setup() {
   Serial.begin(9600);
   pinMode(ledPin, OUTPUT);
 }
 void loop() {
-  morseLetter('H');
-  morseLetter('E');
-  morseLetter('L');
-  morseLetter('L');
-  morseLetter('O');
-  morseLetter(' ');
-  morseLetter('W');
-  morseLetter('O');
-  morseLetter('R');
-  morseLetter('L');
-  morseLetter('D');
-  morseLetter('.');
-  morseLetter(' ');
+  message("HELLO WORLD. ");
 }
